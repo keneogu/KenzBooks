@@ -1,0 +1,9 @@
+<%= form_with model: @article do |form| %>
+	<div>
+		<%= form.text_field :title %>
+		<%= form.select :category, options_for_select(Article.categories.map {|key, value| [key.humanize, key]})%>
+
+		<%= form.button :submit%>
+
+	</div>
+<%end%>

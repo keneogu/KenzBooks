@@ -2,6 +2,9 @@
 
 <% @articles.each do |article|%>
 	<%= link_to article do %>
+	<% if article.image.attached?%>
+	<%= image_tag(article.image)%>
+	<% end %>
 	<h3><%= article.title%></h3>
 	<% end %>
 <% end %>

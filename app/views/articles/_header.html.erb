@@ -1,0 +1,29 @@
+<div class="nav d-flex justify-content-between container-fluid">
+
+  <h1 class="logo">KenzLog</h1>
+
+	<ul class="nav-links">
+		<% if user_signed_in? %>
+      <p class="in-name"><%= current_user.name  if current_user.present?%></p>
+      <li class="in-item">
+      <%= link_to 'LogOut', destroy_user_session_path, class: "in-link", method: :delete %>
+      </li>
+      <li class="in-item">
+      <%= link_to 'Edit Profile', edit_user_registration_path, class: "in-link"%>
+      </li>
+    <% else %>
+      <li class="in-item">
+        <%= link_to 'LogIn', user_session_path, class: "in-link" %>
+      </li>
+      <li class="in-item">
+        <%= link_to "Sign Up", new_user_registration_path, class:"in-link"%>
+      </li>
+    <% end %>
+	</ul>
+
+  <form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+
+</div>

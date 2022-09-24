@@ -11,14 +11,10 @@
   </head>
 
   <body>
-  <% if current_user.present?%>
-    <p><%= current_user.name  if current_user.present?%></p>
-    <p><%= link_to 'Log out', destroy_user_session_path, method: :delete %></p>
-  <% else %>
-    <p><%= link_to 'Log_In', user_session_path %></p>
-   <% end %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <div class="container-fluid">
+    <%= render 'articles/header'%>
+  </div>
     <%= yield %>
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js" type="text/javascript"></script>
   </body>
 </html>

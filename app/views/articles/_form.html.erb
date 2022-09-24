@@ -1,13 +1,45 @@
+<div class="form-center">
+<div class="center">
+
+<h2>Add Article</h2>
+
+<%= form_with model: @article do |form| %>
+  <div class="field form-group">
+    <% form.label :image %><br />
+    <%= form.file_field :image, :input_html => {:accept => 'image/*'}, class:"input", placeholder: "Add image"%>
+  </div>
+  <div class="field form-group">
+    <% form.label :pdf %><br />
+    <%= form.file_field :bodypdf, :input_html => {:accept => 'document/pdf'}, class:"input", placeholder: "Add pdf file"%>
+  </div>
+
+  <div class="field form-group">
+    <% form.label :title %><br/>
+    <%= form.text_field :title, class:"input", placeholder: "Add text"%>
+  </div>
+
+  <div class="field form-group">
+    <% form.label :category %><br />
+    <%= form.select :category, options_for_select(Article.categories.map {|key, value| [key.humanize, key]}), class: "input"%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Submit", class:"btn" %>
+  </div>
+<% end %>
+  </div>
+</div>
+</div>
+
 <%= form_with model: @article do |form| %>
 	<div>
 		<%= image_tag(@article.image) if @article.image.attached?%>
 		<%= form.file_field :image, :input_html => {:accept => 'image/*'}%>
-		<%= form.file_field :bodypdf, :input_html => {:accept => 'document/*'}%>
+		<%= form.file_field :bodypdf, :input_html => {:accept => 'document/pdf'}%>
 		<p>Current: <%= @article.bodypdf.filename.to_s if @article.bodypdf.attached?%></p>
 		<%= form.text_field :title %>
 		<%= form.select :category, options_for_select(Article.categories.map {|key, value| [key.humanize, key]})%>
 
 		<%= form.button :submit%>
-
 	</div>
 <%end%>

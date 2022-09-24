@@ -13,3 +13,230 @@
  *= require_tree .
  *= require_self
  */
+ 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body, html {
+	overflow-x: hidden;
+}
+
+ul {
+	list-style: none;
+}
+
+header {
+	/* // position: relative; */
+	width: 100vw;
+	height: 80vh;
+	background: rgba(0, 0, 0, .65) url('istockphoto-1139789480-170667a.jpg');
+	background-blend-mode: darken;
+	background-position: bottom;
+	background-size: cover;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+.header-content {
+	color: whitesmoke;
+	text-align: center;
+	margin-bottom: 100px;
+}
+
+.header-content h2 {
+	font-size: 4vmin;
+}
+
+.header-content h1 {
+	font-size: 7vmin;
+	margin-top: 10px;
+	margin-bottom: 30px;
+	text-transform: uppercase;
+}
+
+.line {
+	width: 150px;
+	height: 4px;
+	background: #fc036b;
+	margin: 10px auto;
+}
+
+.nav {
+	width: 100%;
+	color: #fc036b;
+	background-color: #fc036b;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+ padding: 20px;
+	color: whitesmoke;
+}
+
+.nav-links {
+	display: flex;
+	align-items: center;
+}
+
+.in-link {
+	color: whitesmoke;
+	margin: 0 30px;
+}
+
+.section-1 {
+	width: 80%;
+	margin: 80px auto;
+}
+
+.title {
+	text-align: center;
+	font-size: 4vmin;
+	color: blue;
+}
+
+.cat-contain {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 30px;
+}
+
+.nav-link {
+	text-decoration: none;
+	padding: 10px;
+	margin: 10px;
+	color: whitesmoke;
+	background: #C95555;
+	border: 1ps solid #978383;
+	border-radius: 5px;
+}
+
+.articles {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	justify-content: space-between;
+	margin-top: 50px;
+}
+
+.img-contain {
+	width: 300px;
+	/* margin: 20px; */
+	/* align-items: center; */
+	text-align: center;
+}
+
+.img-contain .img {
+	width: 250px;
+	height: 200px;
+	margin: 30px;
+}
+
+.img-contain h3 {
+	text-align: center;
+	color: #000000;
+	font-size: 4vmin;
+}
+
+.art-link {
+	margin: 20px auto;
+}
+
+.form-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: white;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	border-radius: 10px;
+	height: 100%;
+}
+
+ .center { 
+	margin: 150px auto;
+	transform: traslate(-50%,-50%);
+	width: 400px;
+	background: white;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	border-radius: 10px;
+} 
+
+.center h2 {
+	text-align: center;
+	font-size: 4vmin;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	padding: 0 0 20px 0;
+	border-bottom: 1px solid silver;
+	letter-spacing: 1px;
+}
+
+.input {
+  width: 80%;
+	padding: 10px 20px;
+	margin-left: 30px;
+  outline: none;
+	font-weight: 400;
+	border: none;
+	border-bottom: 1px solid silver;
+  /* border-bottom: 1px solid #030e24; */
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #030e24;
+  background: transparent;
+  /* border-radius: 30px; */
+}
+/* 
+<!-- HTML !-->
+<button class="button-3" role="button">Button 3</button> */
+
+/* CSS */
+.btn {
+  appearance: none;
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.button-3:hover {
+  background-color: #2c974b;
+}
+
+/* .button-3:focus {
+  box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+  outline: none;
+}
+
+.button-3:disabled {
+  background-color: #94d3a2;
+  border-color: rgba(27, 31, 35, .1);
+  color: rgba(255, 255, 255, .8);
+  cursor: default;
+}
+
+.button-3:active {
+  background-color: #298e46;
+  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+} */

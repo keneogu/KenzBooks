@@ -1,18 +1,29 @@
 class ArticlesController < ApplicationController
+	before_action :authenticate_user!, except: [:index, :show]
+
 	def index
+		params[:category] ? @category = params[:category] : @category = "latest"
+		if @category == 'latest'	
 		@articles = Article.all.order("created_at DESC")
+		else
+			@articles = Article.where(:category=>@category).order("created_at DESC")
+		end
 	end
 
 	def show
 		@article = Article.find(params[:id])
 	end
 
+	def search
+		@articles = Article.where("title LIKE ?", "%" + params[:q] + "%")
+	end
+
 	def new
-		@article = Article.new
+		@article = current_user.articles.build
 	end
 
 	def create
-		@article = Article.new(article_params)
+		@article = current_user.articles.build(article_params)
 
 		if @article.save
       redirect_to @article

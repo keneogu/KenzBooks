@@ -2,9 +2,22 @@
 	<%= image_tag(@article.image)%>
 <% end %>
 
+<% if @article.bodypdf.attached?%>
+	 <%= link_to @article.bodypdf.filename, rails_blob_path(@article.bodypdf, disposition: "attachment") %>
+<% end %>
+
 <h1><%= @article.title %></h1>
 <p><%= @article.category.humanize%></p>
 
+<%= render 'comments/form' %>
+
+<% @article.comments.each do |comment|%>
+<p><%= comment.content %></p>
+<% end %>
+
 <%= link_to 'back', root_path%>
-<%= link_to 'Edit', edit_article_path%>
-<%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Are you sure"}%>
+
+<%if @article.user == current_user%>%
+	<%= link_to 'Edit', edit_article_path(@article)%>
+	<%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Are you sure"}%>
+<% end %>

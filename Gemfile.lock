@@ -106,6 +106,8 @@ GEM
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pay (5.0.3)
+      rails (>= 6.0.0)
     pg (1.4.3)
     puma (5.6.5)
       nio4r (~> 2.0)
@@ -174,6 +176,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    stripe (7.1.0)
     thor (1.2.1)
     tilt (2.0.11)
     turbolinks (5.2.1)
@@ -208,6 +211,7 @@ DEPENDENCIES
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  pay (~> 5.0)
   pg (~> 1.1)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
@@ -215,6 +219,7 @@ DEPENDENCIES
   sass-rails (>= 6)
   simple_form
   spring
+  stripe (~> 7.0)
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)

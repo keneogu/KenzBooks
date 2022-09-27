@@ -1,0 +1,7 @@
+<% if current_user %>
+<%= link_to 'Manage Billing', @portal_session.url unless @portal_session.nil?%>
+<%= current_user.name %>
+<%= current_user.email %>
+<% end %>
+
+<%# <%= link_to 'Billing section', @portal_session.url%>

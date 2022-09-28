@@ -7,6 +7,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :articles, dependent: :destroy
-  has_many :comments, dependent: :destroy
+  with_options dependent: :destroy do |assoc|
+    assoc.has_many :articles
+    assoc.has_many :comments
+  end
+
+  validates :email, uniqueness: true
 end

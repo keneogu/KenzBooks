@@ -4,9 +4,9 @@ class ArticlesController < ApplicationController
 	def index
 		params[:category] ? @category = params[:category] : @category = "latest"
 		if @category == 'latest'	
-		@articles = Article.all.order("created_at DESC")
+		@articles = Article.all.desc
 		else
-			@articles = Article.where(:category=>@category).order("created_at DESC")
+			@articles = Article.where(:category=>@category).desc
 		end
 	end
 

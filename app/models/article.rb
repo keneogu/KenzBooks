@@ -7,4 +7,5 @@ class Article < ApplicationRecord
 	has_many :comments
 
 	validates :title, :descrition, presence: true
+	scope :desc, -> { order(created_at: :desc) }
 end

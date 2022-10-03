@@ -1,24 +1,44 @@
-# README
+# KenzLog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a website where you can download different books to read. you need to pay for a monthly subscription before you can download a book.
 
 Things you may want to cover:
 
-* Ruby version
+## Live link
 
-* System dependencies
+## Built With
 
-* Configuration
+- Ruby
+- RubyonRails
+- HTML
+- CSS
+- Heroku
 
-* Database creation
+## Screenshot
 
-* Database initialization
 
-* How to run the test suite
+## Getting Started
 
-* Services (job queues, cache servers, search engines, etc.)
+To get a local copy up and running follow these simple example steps.
 
-* Deployment instructions
+- Clone the repo by typing `git@github.com:keneogu/KenzBlog.git`
+- `bundle install` - This will install all the gem files
 
-* ...
+## Run locally
+
+- `rails s` - This will run the app locally in the local environment
+- Go to `https://localhost:3000/` on your browser
+- Try it!!
+
+
+## Author
+
+👤 **Kenechukwu Oguagbaka**
+
+- GitHub: [@keneogu](https://github.com/keneogu)
+- Twitter: [@keneogu](https://twitter.com/keneogu)
+- LinkedIn: [@keneogu](https://www.linkedin.com/in/oguagbaka-kenechukwu-8b2289179/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!

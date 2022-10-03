@@ -9,8 +9,7 @@ class CheckoutsController < ApplicationController
 		.payment_processor
 		.checkout(
 			mode: 'subscription',
-			line_items: 'price_1LmczHHpP6oUFeBfgvbtPxpk',
-			success_url: checkout_success_url
+			line_items: 'price_1LmczHHpP6oUFeBfgvbtPxpk'
 		)
 	end
 

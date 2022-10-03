@@ -1,23 +1,32 @@
-<% if @article.image.attached?%>
-	<%= image_tag(@article.image)%>
-<% end %>
+<div class="show section-1">
+	<div class="c-s">
+	<div class="img-contain show-img">
+		<% if @article.image.attached?%>
+			<%= image_tag(@article.image)%>
+		<% end %>
+	</div>
+	<div class="con-contain">
+	<div>
+		<h1><%= @article.title %></h1>
+		<p><%= @article.category.humanize%></p>
+	</div>
+	<div>
+		<% if @article.bodypdf.attached?%>
+			<%= link_to 'Download', rails_blob_path(@article.bodypdf, disposition: "attachment"), class: "nav-link" %>
+		<% end %>
+	</div>
+	</div>
+	</div>
+	<%= render 'comments/form' %>
 
-<% if @article.bodypdf.attached?%>
-	 <%= link_to @article.bodypdf.filename, rails_blob_path(@article.bodypdf, disposition: "attachment") %>
-<% end %>
+	<% @article.comments.each do |comment|%>
+		<p><%= comment.content %></p>
+	<% end %>
 
-<h1><%= @article.title %></h1>
-<p><%= @article.category.humanize%></p>
+	<%= link_to 'back', root_path%>
 
-<%= render 'comments/form' %>
-
-<% @article.comments.each do |comment|%>
-<p><%= comment.content %></p>
-<% end %>
-
-<%= link_to 'back', root_path%>
-
-<%if @article.user == current_user%>%
-	<%= link_to 'Edit', edit_article_path(@article)%>
-	<%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Are you sure"}%>
-<% end %>
+	<%if @article.user == current_user%>%
+		<%= link_to 'Edit', edit_article_path(@article)%>
+		<%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Are you sure"}%>
+	<% end %>
+</div>

@@ -1,10 +1,12 @@
-
-
+<div class="fill_form">
+<div class="comment-header">
+  <p>Comments: </p>
+</div>
 <%= form_with model: [ @article, @article.comments.build ] do |form| %>
-    <%= form.label :content %><br>
-    <%= form.text_area :content %>
+    <%= form.text_area :content, placeholder: "comment", class:"text-area" %>
   </p>
   <p>
     <%= form.submit %>
   </p>
 <% end %>
+</div>

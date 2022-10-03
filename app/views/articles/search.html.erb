@@ -7,13 +7,13 @@
 
 <div class="articles">
 	<% @articles.each do |article|%>
-	<%= link_to article do %>
 	<div class="img-contain">
-		<% if article.image.attached?%>
-			<%= image_tag article.image, class: "img"%>
+		<%= link_to article do %>
+			<% if article.image.attached?%>
+				<%= image_tag article.image, class: "img"%>
+			<% end %>
+				<h3><%= article.title%></h3>
 		<% end %>
-			<h3><%= article.title%></h3>
-	<% end %>
 	</div>
 <% end %>
 </div>

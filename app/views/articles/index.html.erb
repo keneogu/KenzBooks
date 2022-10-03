@@ -13,20 +13,20 @@
 </div>
 	<div class="articles">
 	<% @articles.each do |article|%>
-	<%= link_to checkout_path do %>
 		<div class="img-contain">
-			<% if article.image.attached? %>
-				<%= image_tag article.image, class: "img"%>
+			<%= link_to article_path(article) do %>
+				<%= tag_image(article) %>
+					<h3><%= article.title%></h3>
+					<% unless current_user&.active_subscription %>
+					<%= link_to 'Subscribe', checkout_path(
+						line_items: ['price_1LmczHHpP6oUFeBfgvbtPxpk'],
+						payment_mode: 'subscription'
+					)%>
+					<% end %>
 			<% end %>
-				<h3><%= article.title%></h3>
-				<%= link_to 'Subscribe', checkout_path(
-					line_items: ['price_1LmczHHpP6oUFeBfgvbtPxpk'],
-       		payment_mode: 'subscription'
-				)%>
 		</div>
 	<% end %>
-<% end %>
-</div>
+	</div>
 <br />
 <div class="cat-contain">
 <%= link_to 'Create Article', new_article_path, class: "nav-link"%>

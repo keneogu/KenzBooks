@@ -154,21 +154,25 @@ header {
   border-radius: 10px;
   height: 100%;
 }
-
+.check,
+.actions {
+	padding: 10px;
+}
 .center {
   margin: 150px auto;
   transform: traslate(-50%, -50%);
   width: 400px;
   background: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border-radius: 10px;
+	border-radius: 10px;
+	text-align: center;
 }
 
 .center h2 {
   text-align: center;
   font-size: 4vmin;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin: 20px 0;
   padding: 0 0 20px 0;
   border-bottom: 1px solid silver;
   letter-spacing: 1px;
@@ -177,7 +181,6 @@ header {
 .input {
   width: 80%;
   padding: 10px 20px;
-  margin-left: 30px;
   outline: none;
   font-weight: 400;
   border: none;

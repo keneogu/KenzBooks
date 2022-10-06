@@ -13,4 +13,13 @@ class User < ApplicationRecord
   end
 
   validates :email, uniqueness: true
+
+  def stripe_attributes(pay_customer)
+    {
+      metadata: {
+        pay_customer_id: pay_customer.id,
+        user_id: id # or pay_customer.owner_id
+      }
+    }
+  end
 end

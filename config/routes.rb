@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'checkout', to: 'checkouts#show'
-  get 'members/dashboard'
 
   devise_for :users, controllers: {
     session: 'users/sessions',

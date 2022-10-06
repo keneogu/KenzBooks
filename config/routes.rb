@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'checkout', to: 'checkouts#show'
-  get 'checkout/success', to: 'checkouts#success'
   get 'members/dashboard'
 
   devise_for :users, controllers: {

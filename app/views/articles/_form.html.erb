@@ -30,16 +30,3 @@
   </div>
 </div>
 </div>
-
-<%= form_with model: @article do |form| %>
-	<div>
-		<%= image_tag(@article.image) if @article.image.attached?%>
-		<%= form.file_field :image, :input_html => {:accept => 'image/*'}%>
-		<%= form.file_field :bodypdf, :input_html => {:accept => 'document/pdf'}%>
-		<p>Current: <%= @article.bodypdf.filename.to_s if @article.bodypdf.attached?%></p>
-		<%= form.text_field :title %>
-		<%= form.select :category, options_for_select(Article.categories.map {|key, value| [key.humanize, key]})%>
-
-		<%= form.button :submit%>
-	</div>
-<%end%>

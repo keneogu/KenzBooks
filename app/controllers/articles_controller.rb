@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
 	before_action :authenticate_user!, except: [:index]
+	before_action :check_subscription_status, except: [:index, :search]
 
 	def index
 		params[:category] ? @category = params[:category] : @category = "latest"

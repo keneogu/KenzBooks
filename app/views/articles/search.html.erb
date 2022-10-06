@@ -1,25 +1,32 @@
-<div class="title">
-	<h1>Articles</h1>
-	<div class="line"></div>
-</div>
+<div class="section-1">
 
-<% if @articles.present?%>
-
-<div class="articles">
-	<% @articles.each do |article|%>
-	<div class="img-contain">
-		<%= link_to article do %>
-			<% if article.image.attached?%>
-				<%= image_tag article.image, class: "img"%>
-			<% end %>
-				<h3><%= article.title%></h3>
-		<% end %>
+	<div class="title">
+		<h1>Articles</h1>
+		<div class="line"></div>
 	</div>
-<% end %>
+
+	<% if @articles.present?%>
+
+	<div class="articles">
+		<% @articles.each do |article|%>
+		<div class="img-contain">
+			<%= link_to article do %>
+				<% if article.image.attached?%>
+					<%= image_tag article.image, class: "img"%>
+				<% end %>
+					<h3><%= article.title%></h3>
+			<% end %>
+		</div>
+	<% end %>
+	</div>
+
+	<% else %>
+
+	<h2>No Article Found</h2>
+
+	<% end %>
+
 </div>
 
-<% else %>
 
-<h2>No Article Found</h2>
-
-<% end %>
+	<%= render 'footer' %>

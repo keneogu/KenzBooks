@@ -12,23 +12,24 @@
 		<% end %>
 </div>
 	<div class="articles">
-	<% @articles.each do |article|%>
-		<div class="img-contain">
-			<%= link_to article_path(article) do %>
-				<%= tag_image(article) %>
-					<h3><%= article.title%></h3>
-					<% unless current_user&.active_subscription %>
-					<%= link_to 'Subscribe', checkout_path(
-						line_items: ['price_1LmczHHpP6oUFeBfgvbtPxpk'],
-						payment_mode: 'subscription'
-					), class:"nav-link"%>
-					<% end %>
-			<% end %>
-		</div>
-	<% end %>
+		<% @articles.each do |article|%>
+			<div class="img-contain">
+				<%= link_to article_path(article) do %>
+					<%= tag_image(article) %>
+						<h3><%= article.title%></h3>
+						<% unless current_user&.active_subscription %>
+							<%= link_to 'Subscribe', checkout_path(
+								line_items: ['price_1LmczHHpP6oUFeBfgvbtPxpk'],
+								payment_mode: 'subscription'
+							), class:"nav-link"%>
+						<% end %>
+				<% end %>
+			</div>
+		<% end %>
 	</div>
 <br />
 <div class="cat-contain">
 <%= link_to 'Create Article', new_article_path, class: "nav-link"%>
 </div>
 </section>
+<%= render 'footer'%>

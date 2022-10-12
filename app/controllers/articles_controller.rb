@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 	before_action :authenticate_user!, except: [:index]
-	before_action :check_subscription_status, except: [:index, :search]
+	# before_action :check_subscription_status, except: [:index, :search]
 
 	def index
 		params[:category] ? @category = params[:category] : @category = "latest"
@@ -14,10 +14,10 @@ class ArticlesController < ApplicationController
 	def show
 		@article = Article.find(params[:id])
 
-		return unless current_user
-	  return if current_user.payment_processor.nil?
+		# return unless current_user
+	  # return if current_user.payment_processor.nil?
 		
-		@portal_session = current_user.payment_processor.billing_portal
+		# @portal_session = current_user.payment_processor.billing_portal
 	end
 
 	def search

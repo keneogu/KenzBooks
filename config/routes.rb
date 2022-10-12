@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   resources :articles do 
     resources :comments
   end
+  resources :likes, only: [:create, :destroy]
   root "articles#index"
 end

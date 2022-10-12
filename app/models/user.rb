@@ -10,9 +10,12 @@ class User < ApplicationRecord
   with_options dependent: :destroy do |assoc|
     assoc.has_many :articles
     assoc.has_many :comments
+    assoc.has_many :likes
   end
 
   validates :email, uniqueness: true
+  validates :email, presence: true
+
 
   def stripe_attributes(pay_customer)
     {

@@ -5,28 +5,31 @@
 	<h1>Articles</h1>
 	<div class="line"></div>
 </div>
+
 <div class="cat-contain">
 	<p> <%= link_to 'Latest', articles_path(:category => 'latest'), class: "nav-link #{'active' if @category == 'latest'}" %> </p>
 		<% Article.categories.keys.each do |key|%>
 			<p><%= link_to key.humanize, articles_path(:category => key ), class: "nav-link #{'active' if @category == key}"%></p>
 		<% end %>
 </div>
+
 	<div class="articles">
 		<% @articles.each do |article|%>
 			<div class="img-contain">
 				<%= link_to article_path(article) do %>
 					<%= tag_image(article) %>
-						<h3><%= article.title%></h3>
-						<% unless current_user&.active_subscription %>
-							<%= link_to 'Subscribe', checkout_path(
-								line_items: ['price_1LmczHHpP6oUFeBfgvbtPxpk'],
-								payment_mode: 'subscription'
-							), class:"nav-link"%>
-						<% end %>
+					<h3><%= article.title%></h3>
+				<% end %>
+				<% unless current_user&.active_subscription %>
+					<%= link_to 'Subscribe', checkout_path(
+						line_items: ['price_1LmczHHpP6oUFeBfgvbtPxpk'],
+						payment_mode: 'subscription'
+					), class:"nav-link"%>
 				<% end %>
 			</div>
 		<% end %>
 	</div>
+
 <br />
 <div class="cat-contain">
 <%= link_to 'Create Article', new_article_path, class: "nav-link"%>

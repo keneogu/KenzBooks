@@ -9,7 +9,8 @@ class Article < ApplicationRecord
 	has_many :comments
 	has_many :likes
 
-	validates :title, :descrition, presence: true
+	validates :title, presence: true
+	validates :user_id, :presence => true
 	scope :desc, -> { order(created_at: :desc) }
 
 	private

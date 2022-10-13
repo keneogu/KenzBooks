@@ -7,6 +7,7 @@
 			<% if @article.image.attached?%>
 				<%= image_tag(@article.image)%>
 			<% end %>
+			<%= @article.user.email %>
 		</div>
 		<div class="con-contain">
 			<div>
@@ -38,13 +39,13 @@
 
 	<%= render 'comments/form' %>
 
-	<% @article.comments.each do |comment|%>
-		<p><%= comment.content %></p>
-	<% end %>
+	<h3>Comments:</h3>
+	<%= render @article.comments %>>
+
 
 	<%= link_to 'back', root_path%>
 
-	<%if @article.user == current_user%>
+	<%if @article.user == current_user || current_user.admin%>
 		<%= link_to 'Edit', edit_article_path(@article)%>
 		<%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Are you sure"}%>
 	<% end %>

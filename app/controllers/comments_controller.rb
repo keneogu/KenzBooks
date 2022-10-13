@@ -1,10 +1,10 @@
 class CommentsController < ApplicationController
 before_action :authenticate_user!
-before_action :check_subscription_status
+# before_action :check_subscription_status
 
 def create
 	@article = Article.find(params[:article_id])
-	@comment = Comment.create(params[:comment].permit(:content))
+	@comment = @article.comments.create(comment_params)
 	@comment.user_id = current_user.id
 	@comment.article_id = @article.id
 
@@ -13,6 +13,12 @@ def create
 	else
 		render :new
 	end
+end
+
+private 
+
+def comment_params
+	params.require(:comment).permit(:content)
 end
 
 end

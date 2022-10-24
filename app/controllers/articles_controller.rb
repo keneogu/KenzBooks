@@ -14,6 +14,8 @@ class ArticlesController < ApplicationController
 	def show
 		@article = Article.find(params[:id])
 
+		
+
 		# return unless current_user
 	  # return if current_user.payment_processor.nil?
 		
@@ -21,7 +23,12 @@ class ArticlesController < ApplicationController
 	end
 
 	def search
-		@articles = Article.where("title LIKE ?", "%" + params[:q] + "%")
+		if params[:q].blank?
+			redirect_to root_path and return
+		else
+			@parameter = params[:q].downcase
+			@articles = Article.all.where("lower(title) LIKE ?", "%" + "#{@parameter}" + "%")
+		end
 	end
 
 	def new
@@ -63,6 +70,6 @@ class ArticlesController < ApplicationController
 	private
 
 	def article_params
-		params.require(:article).permit(:title,:category, :image, :bodypdf)
+		params.require(:article).permit(:title, :category, :image, :bodypdf)
 	end
 end

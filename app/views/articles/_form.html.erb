@@ -5,22 +5,22 @@
 
 <%= form_with model: @article do |form| %>
   <div class="field form-group">
-    <% form.label :image %><br />
+    <%= form.label :Add_image, class:"lab" %><br />
     <%= form.file_field :image, :input_html => {:accept => 'image/*'}, class:"input", placeholder: "Add image"%>
   </div>
   <div class="field form-group">
-    <% form.label :pdf %><br />
-    <%= form.file_field :bodypdf, :input_html => {:accept => 'document/pdf'}, class:"input", placeholder: "Add pdf file"%>
+    <%= form.label :add_only_pdf_document, class:"lab" %><br />
+    <%= form.file_field :bodypdf, :input_html => {:accept => 'document/pdf'}, class:"input", placeholder: "Add pdf document"%>
   </div>
 
   <div class="field form-group">
-    <% form.label :title %><br/>
-    <%= form.text_field :title, class:"input", placeholder: "Add text"%>
+    <% form.label :title, class:"lab" %><br/>
+    <%= form.text_field :title, class:"input", placeholder: "Add a short description"%>
   </div>
 
   <div class="field form-group">
-    <% form.label :category %><br />
-    <%= form.select :category, options_for_select(Article.categories.map {|key, value| [key.humanize, key]}), class: "input"%>
+    <%= form.label :choose_category, class:"lab" %><br />
+    <%= form.select :category, options_for_select(Article.categories.map {|key, value| [key.humanize, key]}), class: "cate"%>
   </div>
 
   <div class="actions">

@@ -11,7 +11,7 @@ def create
 	if @comment.save
 		redirect_to article_path(@article)
 	else
-		render :new
+		redirect_to article_path(@article)
 	end
 end
 

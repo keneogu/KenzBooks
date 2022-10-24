@@ -26,6 +26,11 @@ html {
   overflow-x: hidden;
 }
 
+a {
+  text-decoration: none;
+  color: #9e8f8f;
+}
+
 ul {
   list-style: none;
 }
@@ -156,10 +161,12 @@ header {
   border-radius: 10px;
   height: 100%;
 }
+
 .check,
 .actions {
   padding: 10px;
 }
+
 .center {
   margin: 150px auto;
   transform: traslate(-50%, -50%);
@@ -191,6 +198,26 @@ header {
   letter-spacing: 1px;
   color: #030e24;
   background: transparent;
+}
+
+.form-group {
+  padding-top: 10px;
+}
+
+.lab {
+  font-style: italic;
+  color: #d1d1d1;
+}
+
+select {
+  width: 150px;
+  /* height: 200px; */
+  /* padding: 15px 20px; */
+  font-size: 15px;
+  font-weight: 600;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .btn {
@@ -262,6 +289,33 @@ header {
   width: 80%;
   height: 100px;
   border-radius: 10px;
+}
+.mr-sm-2,
+.mr-sm-2:active  {
+  border: 0;
+  border-radius: 20px;
+  height: 30px;
+  width: 200px;
+}
+
+.shared-link {
+  padding: 15px;
+}
+
+.notice-color {
+  color: #c95555;
+  font-style: italic;
+  font-stretch: extra-condensed;
+}
+
+.comment-contain {
+  margin: 0 auto;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+
+
 }
 
 .footer {

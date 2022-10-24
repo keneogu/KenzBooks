@@ -14,8 +14,6 @@ class ArticlesController < ApplicationController
 	def show
 		@article = Article.find(params[:id])
 
-		
-
 		# return unless current_user
 	  # return if current_user.payment_processor.nil?
 		

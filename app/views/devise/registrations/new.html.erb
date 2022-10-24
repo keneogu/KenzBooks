@@ -3,6 +3,9 @@
 
 <h2>Sign Up</h2>
 
+<p class="notice notice-color"><%= notice %></p>
+<p class="alert notice-color"><%= alert %></p>
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <div class="field form-group">
     <% f.label :name %><br />
@@ -25,6 +28,7 @@
 
   <div class="actions">
     <%= f.submit "Sign up", class:"btn" %>
+    <%= render "devise/shared/links" %>
   </div>
 <% end %>
   </div>

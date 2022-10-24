@@ -1,7 +1,11 @@
 <div class="form-center">
 <div class="center">
 
-<h2>Add Article</h2>
+<% if controller.action_name == "new" %>
+  <h2>Add Article</h2>
+<% else %>
+  <h2>Edit Article</h2>
+<% end %>
 
 <%= form_with model: @article do |form| %>
   <div class="field form-group">

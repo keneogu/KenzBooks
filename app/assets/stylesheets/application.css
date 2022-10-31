@@ -308,6 +308,11 @@ select {
   font-stretch: extra-condensed;
 }
 
+.btn-like {
+  padding: 5px;
+  color: #000000;
+}
+
 .comment-contain {
   margin: 0 auto;
   width: 50%;

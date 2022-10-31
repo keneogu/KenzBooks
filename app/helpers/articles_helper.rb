@@ -8,4 +8,8 @@ module ArticlesHelper
 	def portal
 		@portal_session.url unless @portal_session.nil?
 	end
+
+	def likes_count(article)
+    article.likes.count
+  end
 end

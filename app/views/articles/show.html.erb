@@ -1,7 +1,4 @@
 <div class="show section-1">
-<% if current_user %>
-	<%= link_to 'Manage Billing', portal, class:"nav-link" %>
-<% end %>
 	<div class="c-s">
 		<div class="img-contain show-img">
 			<% if @article.image.attached?%>
@@ -21,26 +18,13 @@
 			</div>
 		</div>
 	</div>
-	<%= @article.likes.count %> likes
-	<% like = current_user.likes.find_by(article: @article)%>
-	<% if like.nil? %>
-	<form action="/likes" method="post">
-		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
-		<input type="hidden" name="like[article_id]" value="<%= @article.id%>">
-		<input type="submit" value="Like">
-	</form>
-	<% else %>
-	<form action="<%= like_path(like)%>" method="post">
-		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
-		<input type="hidden" name="_method" value="DELETE">
-		<input type="submit" value="Unlike">
-	</form>
-	<% end %>
+	 <span class="btn-like"><%=like_or_dislike_btn(@article)%></span>
+	<%=likes_count(@article)%> likes
 
 	<%= render 'comments/form' %>
 
 	<h3>Comments:</h3><br/>
-	<%= render @article.comments %>
+	<%= render @article.comments.select(&:persisted?) %>
 
 
 	<%= link_to 'back', root_path%>

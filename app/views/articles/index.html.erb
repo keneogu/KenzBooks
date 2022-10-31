@@ -20,12 +20,6 @@
 					<%= tag_image(article) %>
 					<h3><%= article.title%></h3>
 				<% end %>
-				<% unless current_user&.active_subscription %>
-					<%= link_to 'Subscribe', checkout_path(
-						line_items: ['price_1LmczHHpP6oUFeBfgvbtPxpk'],
-						payment_mode: 'subscription'
-					), class:"nav-link"%>
-				<% end %>
 			</div>
 		<% end %>
 	</div>

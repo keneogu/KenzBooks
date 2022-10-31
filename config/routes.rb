@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'checkout', to: 'checkouts#show'
-
   devise_for :users, controllers: {
     session: 'users/sessions',
     registration: 'users/registrations'
@@ -10,7 +8,8 @@ Rails.application.routes.draw do
   get 'search', to: "articles#search"
   resources :articles do 
     resources :comments
+    resources :likes, only: [:create, :destroy]
   end
-  resources :likes, only: [:create, :destroy]
+  # resources :likes, only: [:create, :destroy]
   root "articles#index"
 end

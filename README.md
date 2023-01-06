@@ -1,6 +1,6 @@
 # KenzLog
 
-This is a website where you can download different books to read. you need to pay for a monthly subscription before you can download a book.
+This is a website where you can download different books to read and upload your own free books for others to download and read.
 
 Things you may want to cover:
 

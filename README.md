@@ -13,7 +13,6 @@ Things you may want to cover:
 - RubyonRails
 - HTML
 - CSS
-- Heroku
 
 ## Screenshot
 

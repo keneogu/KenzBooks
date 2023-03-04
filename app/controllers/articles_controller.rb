@@ -1,17 +1,17 @@
 class ArticlesController < ApplicationController
 	before_action :authenticate_user!, except: [:index]
+	before_action :find_article, only: [:show, :edit, :update, :delete]
 
 	def index
 		params[:category] ? @category = params[:category] : @category = "latest"
-		if @category == 'latest'	
-		@articles = Article.all.desc
+		if @category == 'latest'
+			@articles = Article.all.desc
 		else
 			@articles = Article.where(:category=>@category).desc
 		end
 	end
 
 	def show
-		@article = Article.find(params[:id])
 	end
 
 	def search
@@ -38,12 +38,9 @@ class ArticlesController < ApplicationController
 	end
 
 	def edit
-		@article = Article.find(params[:id])
 	end
 
 	def update
-		@article = Article.find(params[:id])
-
 		if @article.update(article_params)
 			redirect_to @article
 		else
@@ -52,10 +49,7 @@ class ArticlesController < ApplicationController
 	end
 
 	def destroy
-		@article = Article.find(params[:id])
-
 		@article.destroy
-
 		redirect_to root_path
 	end
 
@@ -64,4 +58,9 @@ class ArticlesController < ApplicationController
 	def article_params
 		params.require(:article).permit(:title, :category, :image, :bodypdf)
 	end
+
+	def find_article
+		@article = Article.find(params[:id])
+	end
+	
 end

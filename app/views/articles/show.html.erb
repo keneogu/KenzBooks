@@ -5,6 +5,7 @@
 				<%= image_tag(@article.image)%>
 			<% end %>
 			<%= @article.user.email %>
+			<p><%= time_ago_in_words(@article.created_at)%> ago</p>
 		</div>
 		<div class="con-contain">
 			<div>

@@ -1,4 +1,6 @@
 <div class="comment-contain">
 	<p><%= comment.content %></p>
+	<p><%= time_ago_in_words(comment.created_at)%> ago</p>
 	<p><%= comment.user.name %></p>
+	<%= link_to "Delete", article_comment_path(comment.article, comment), method: :delete, data: {confirm: "Are you sure?"}%>
 </div>

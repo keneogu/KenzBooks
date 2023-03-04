@@ -4,7 +4,7 @@ This is a website where you can download different books to read and upload your
 
 
 ## Screenshot
-[App screenshot](app/assets/images/screen.png)
+![App screenshot](app/assets/images/screen.png)
 
 ## Live link
 Live link will be up within the next 2 weeks

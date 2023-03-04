@@ -1,39 +1,33 @@
-<div class="show section-1">
-	<div class="c-s">
-		<div class="img-contain show-img">
-			<% if @article.image.attached?%>
-				<%= image_tag(@article.image)%>
+<div class="w-1/2 mx-auto mt-5 mb-3">
+	<div class="c-s flex shadow-2xl">
+		<div class="text-center w-60 m-4">
+			<% if @article.image.attached? %>
+				<%= image_tag(@article.image, :style => "w-full") %>
 			<% end %>
-			<%= @article.user.email %>
-			<p><%= time_ago_in_words(@article.created_at)%> ago</p>
+			<p class="italic font-thin text-xs text-gray-600"><%= @article.user.email %></p>
+			<p class="italic font-thin text-xs text-gray-400"><%= time_ago_in_words(@article.created_at)%> ago</p>
 		</div>
-		<div class="con-contain">
+		<div class="con-contain flex w-full justify-between m-4">
 			<div>
 				<h1><%= @article.title %></h1>
-				<p><%= @article.category.humanize%></p>
+				<p class="font-light text-sm text-cyan-300 italic"><%= @article.category.humanize%></p>
 			</div>
 			<div>
 			<% if @article.bodypdf.attached?%>
-				<%= link_to 'Download', rails_blob_path(@article.bodypdf, disposition: "attachment"), class: "nav-link" %>
+				<%= link_to 'Download', rails_blob_path(@article.bodypdf, disposition: "attachment"), class: "text-stone-100 p-2 m-2 bg-orange-700 border-orange-800 rounded-xl italic hover:font-bold shadow-lg" %>
 			<% end %>
 			</div>
 		</div>
 	</div>
-	 <span class="btn-like"><%=like_or_dislike_btn(@article)%></span>
+	 <span class="p-4 text-black"><%=like_or_dislike_btn(@article)%></span>
 	<%=likes_count(@article)%> likes
 
 	<%= render 'comments/form' %>
 
-	<h3>Comments:</h3><br/>
 	<%= render @article.comments.select(&:persisted?) %>
-
-
-	<%= link_to 'back', root_path%>
 
 	<%if @article.user == current_user || current_user.admin%>
 		<%= link_to 'Edit', edit_article_path(@article)%>
 		<%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Are you sure"}%>
 	<% end %>
 </div>
-
-	<%= render 'footer' %>

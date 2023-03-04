@@ -1,24 +1,24 @@
 <%= render 'section'%>
 
-<section class="section-1">
-<div class="title">
-	<h1>Articles</h1>
-	<div class="line"></div>
+<section class="section-1 w-4/5 text-center">
+<div class="text-center ">
+	<h1 class="text-cyan-800 text-3xl font-extrabold">Articles</h1>
+	<div class="line w-9 h-1 bg-orange-500"></div>
 </div>
 
-<div class="cat-contain">
-	<p> <%= link_to 'Latest', articles_path(:category => 'latest'), class: "nav-link #{'active' if @category == 'latest'}" %> </p>
+<div class="flex flex-wrap items-center justify-center m-9">
+	<p> <%= link_to 'Latest', articles_path(:category => 'latest'), class: "text-stone-100 p-1 m-2 bg-orange-700 border-orange-800 rounded #{'text-slate-200 text-lg italic drop-shadow-lg shadow-xl font-bold' if @category == 'latest'}" %> </p>
 		<% Article.categories.keys.each do |key|%>
-			<p><%= link_to key.humanize, articles_path(:category => key ), class: "nav-link #{'active' if @category == key}"%></p>
+			<p><%= link_to key.humanize, articles_path(:category => key ), class: "text-stone-100 p-1 m-2 bg-orange-700 border-orange-800 rounded #{'text-slate-200 text-lg italic drop-shadow-lg shadow-xl font-bold' if @category == key}"%></p>
 		<% end %>
 </div>
 
-	<div class="articles">
+	<div class="articles flex flex-wrap justify-center items-center mt-11">
 		<% @articles.each do |article|%>
-			<div class="img-contain">
+			<div class="img-contain w-72 m-8 text-center">
 				<%= link_to article_path(article) do %>
 					<%= tag_image(article) %>
-					<h3><%= article.title%></h3>
+					<h3 class="text-center font-extrabold"><%= article.title%></h3>
 				<% end %>
 			</div>
 		<% end %>
@@ -27,8 +27,8 @@
 <br />
 
 <% if user_signed_in? %>
-	<div class="cat-contain">
-		<%= link_to 'Create Article', new_article_path, class: "nav-link"%>
+	<div class="mt-8 bg-orange-700 border-orange-800 rounded italic drop-shadow-lg shadow-xl">
+		<%= link_to 'Create Article', new_article_path, class: "text-slate-200 text-lg italic drop-shadow-lg shadow-xl font-bold"%>
 	</div>
 <% end %>
 

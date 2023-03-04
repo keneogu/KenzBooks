@@ -1,6 +1,12 @@
-<div class="comment-contain">
-	<p><%= comment.content %></p>
-	<p><%= time_ago_in_words(comment.created_at)%> ago</p>
-	<p><%= comment.user.name %></p>
-	<%= link_to "Delete", article_comment_path(comment.article, comment), method: :delete, data: {confirm: "Are you sure?"}%>
+<div class="py-3 px-4 mt-4 w-full bg-neutral-50">
+<hr />
+<div class="flex mx-auto justify-between my-2">
+	<div class="">
+			<p class="font-light text-gray-500 text-sm"><%= comment.user.name %></p>
+			<p class="font-sm"><%= comment.content %></p>
+			<p class="italic font-thin text-xs text-gray-400"><%= time_ago_in_words(comment.created_at)%> ago</p>
+		</div>
+		<%= link_to "Delete", article_comment_path(comment.article, comment), method: :delete, data: {confirm: "Are you sure?"}%>
+	</div>
+	<hr />
 </div>

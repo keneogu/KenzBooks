@@ -2,10 +2,12 @@
 
 This is a website where you can download different books to read and upload your own free books for others to download and read.
 
-Things you may want to cover:
+
+## Screenshot
+[App screenshot](app/assets/images/screen.png)
 
 ## Live link
-[live]()
+Live link will be up within the next 2 weeks
 
 ## Built With
 
@@ -13,9 +15,8 @@ Things you may want to cover:
 - RubyonRails
 - HTML
 - CSS
-
-## Screenshot
-
+- Bootstrap
+- Tailwindcss
 
 ## Getting Started
 
@@ -26,7 +27,7 @@ To get a local copy up and running follow these simple example steps.
 
 ## Run locally
 
-- `rails s` - This will run the app locally in the local environment
+- `./bin/dev` - This will run the app locally in the local environment
 - Go to `https://localhost:3000/` on your browser
 - Try it!!
 

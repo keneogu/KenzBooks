@@ -22,7 +22,7 @@ Live link will be up within the next 2 weeks
 
 To get a local copy up and running follow these simple example steps.
 
-- Clone the repo by typing `git@github.com:keneogu/KenzBlog.git`
+- Clone the repo by typing `git@github.com:keneogu/KenzBooks.git`
 - `bundle install` - This will install all the gem files
 
 ## Run locally

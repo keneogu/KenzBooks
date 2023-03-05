@@ -1,4 +1,4 @@
-# KenzLog
+# KenzBookz
 
 This is a website where you can download different books to read and upload your own free books for others to download and read.
 
@@ -7,7 +7,9 @@ This is a website where you can download different books to read and upload your
 ![App screenshot](app/assets/images/screen.png)
 
 ## Live link
-Live link will be up within the next 2 weeks
+[Live](https://kenzbookz.onrender.com/)
+
+The mobile version is still under construction
 
 ## Built With
 

@@ -191,7 +191,7 @@ select {
   font-stretch: extra-condensed;
 }
 
-@media(max-width: 620px) {
+@media (max-width: 620px) {
   .c-s {
     display: flex;
     flex-direction: column;

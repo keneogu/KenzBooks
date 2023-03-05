@@ -1,0 +1,18 @@
+databases:
+  - name: KenzBooks
+    databaseName: kenzbooks
+    user: kenzbooks_user
+
+services:
+  - type: web
+    name: KenzBooks
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: KenzBooks
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false

@@ -24,7 +24,7 @@ The mobile version is still under construction
 
 To get a local copy up and running follow these simple example steps.
 
-- Clone the repo by typing `git@github.com:keneogu/KenzBooks.git`
+- Clone the repo by typing `git clone git@github.com:keneogu/KenzBooks.git` in your terminal
 - `bundle install` - This will install all the gem files
 
 ## Run locally

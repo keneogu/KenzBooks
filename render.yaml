@@ -1,7 +1,7 @@
 databases:
   - name: KenzBooks
-    databaseName: kenzbooks
-    user: kenzbooks_user
+    databaseName: kenzbooks_oo5e
+    user: kenzbooks
 
 services:
   - type: web
